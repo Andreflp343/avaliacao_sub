@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("https://p4.wallpaperbetter.com/wallpaper/908/977/162/artistic-landscape-blue-minimalist-moon-hd-wallpaper-preview.jpg");
+    }
+
+    .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+    font-family: 'Roboto';
+}
+
+.card {
+    background-color: #ffffff80;
+    padding: 30px;
+    border-radius: 4%;
+    box-shadow: 3px 3px 3px 0px #00000060;
+    width: 800px;
+    font-family: 'Roboto';
+}
+
+.center{
+      color: #000000dc;
+      font-family:'Roboto', Times, serif;
+      text-align: center;
+      display: grid;
+      height: 100vh;
+      place-items: center;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="center">
+      <form method="POST" action={% url 'cadastro' %}>
+            <div class="card">
+            {% csrf_token %}
+          {{ form }}
+          <p>
+          <button type="submit">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
